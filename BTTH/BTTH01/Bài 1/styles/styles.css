@@ -1,0 +1,16 @@
+.flower {
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.flower img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+}
+.table img {
+    max-height: 80px;
+    object-fit: cover;
+}
