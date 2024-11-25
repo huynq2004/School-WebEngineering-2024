@@ -5,8 +5,9 @@
 
     <?php
     $sinhvien = include 'read_csv.php';
+    //print_r( $sinhvien );
     ?>
-
+P/s: Em đã in mảng ra test, đúng key r mà vẫn k chạy đc thầy ạ. Em k bt tại sao nữa, em xp lỗi này hỏi thầy sau ạ!
     <table class="table table-bordered table-striped">
         <thead class="table-dark">
             <tr>
