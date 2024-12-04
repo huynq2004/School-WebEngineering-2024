@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteBase /School-WebEngineering-2024/BTVN/hw_041224/public/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]
