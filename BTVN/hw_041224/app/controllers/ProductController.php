@@ -12,18 +12,6 @@ class ProductController
         include APP_ROOT . '/app/views/admin/dashboard.php';
     }
 
-    //Thêm phương thức search để xử lý tìm kiếm
-    // public function search() {
-    //     $query = $_GET['query'];
-
-    //     // Gọi dịch vụ để tìm kiếm tin tức
-    //     $newsService = new NewsService();
-    //     $results = $newsService->searchNews($query);
-
-    //     // Chuyển kết quả tới view
-    //     include APP_ROOT.'/app/views/news/search_results.php';
-    // }
-
     public function add()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -43,7 +31,6 @@ class ProductController
                 }
             }
 
-            // Gọi service để thêm bản tin
             $productService = new ProductService();
             $productService->addProduct($name, $price, $imageName);
 
@@ -52,8 +39,7 @@ class ProductController
             exit();
         }
 
-        // Hiển thị form nếu không phải POST
-        include APP_ROOT . '/app/views/admin/news/add.php';
+        include APP_ROOT . '/app/views/admin/product/add.php';
     }
 
     public function edit()
@@ -65,8 +51,7 @@ class ProductController
             $product = $productService->getProductById($id);
 
             if ($product) {
-                // Chuyển đến view edit.php cùng với dữ liệu bài viết
-                include APP_ROOT . '/app/views/admin/news/edit.php';
+                include APP_ROOT . '/app/views/admin/product/edit.php';
             } else {
                 echo "Bài viết không tồn tại.";
             }
@@ -77,8 +62,7 @@ class ProductController
 
     public function showAdd()
     {
-        // Chuyển đến view edit.php cùng với dữ liệu bài viết
-        include APP_ROOT . '/app/views/admin/news/add.php';
+        include APP_ROOT . '/app/views/admin/product/add.php';
     }
 
     public function update()
@@ -91,7 +75,6 @@ class ProductController
 
             $productService = new ProductService();
 
-            // Kiểm tra và upload hình ảnh mới nếu có
             if (!empty($image['name'])) {
                 $imageName = time() . '_' . $image['name'];
                 move_uploaded_file($image['tmp_name'], APP_ROOT . '/public/images/' . $imageName);
