@@ -3,7 +3,7 @@ require_once '../app/config/config.php';
 require '../app/config/database.php';
 
 // Lấy thông tin về controller và action từ URL
-$controller = isset($_GET['controller']) ? ucfirst($_GET['controller']) : 'Home';
+$controller = isset($_GET['controller']) ? ucfirst($_GET['controller']) : 'Product';
 
 $action = isset($_GET['action']) ? $_GET['action'] : 'index';
 
